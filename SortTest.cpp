@@ -18,10 +18,11 @@ void insertionSort(SortClass &s)
 int main()
 {
 
-    SortClass  st(20);
+    SortClass  st(500);
 
-    cout << st << endl; 
-    insertionSort(st);
+    cout << st << endl;
+    //insertionSort(st);
+    st.ShellSort(st, 2);
     cout << "------\n";
     cout << st << endl; 
     cout << "Swap count : " << st.getSwapCount() << endl;

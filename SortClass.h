@@ -25,6 +25,8 @@ public:
 
     void swap(int i, int j);
 
+    void ShellSort(SortClass& s, int code);
+
 private:
 
 
@@ -33,4 +35,4 @@ private:
 
 };
 
-void ShellSort(SortClass&, int code);
+void ShellSort(SortClass&s, int code);
