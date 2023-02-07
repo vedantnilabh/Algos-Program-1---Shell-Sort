@@ -35,4 +35,4 @@ private:
 
 };
 
-void ShellSort(SortClass&s, int code);
+
