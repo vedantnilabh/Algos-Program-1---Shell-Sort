@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "SortClass.h"
-#include "math.h"
+#include <math.h>
 
 using namespace std;
 
@@ -103,25 +103,29 @@ void SortClass::ShellSort(SortClass &s, int code) {
             h += 1;
         }
     }
-    if (code == 2){
+    else if (code == 2){
         int h = 1;
         while((pow(2, h) - 1) < s.count()){
             hlist.push_back(pow(2, h) - 1);
             h += 1;
         }
     }
-    if (code == 3){
+    else if (code == 3){
         int h = 1;
-        while((pow(3, h) - 1) / 2 < s.count()){
+        while(((pow(3, h) - 1) / 2) < s.count()){
             hlist.push_back((pow(3, h) - 1) / 2);
             h += 1;
         }
+
     }
+
+
+    reverse(hlist.begin(), hlist.end());
     for(int i = 0; i < hlist.size(); i++) {
         int h = hlist[i];
         for (int j = h; j < s.count(); j++) {
             int k = j;
-            while (j > 1 && s.lessthan(k, k - h)) {
+            while (k > h && s.lessthan(k, k - h)){
                 s.swap(k, k - h);
                 k -= h;
             }
