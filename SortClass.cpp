@@ -13,7 +13,7 @@ SortClass::SortClass(int n, bool genRandom)
     swapCount = 0;
     if (genRandom) 
 	{
-            srand(time(0));
+//srand(time(0));
 	    for (int i = 0; i < n; i++)
 		array.push_back((rand() % 1000) * 1.0);
 	}
@@ -116,7 +116,9 @@ void SortClass::ShellSort(SortClass &s, int code) {
             hlist.push_back((pow(3, h) - 1) / 2);
             h += 1;
         }
-
+    }
+    else if(hlist.empty()){
+        throw runtime_error("Invalid code");
     }
 
 
